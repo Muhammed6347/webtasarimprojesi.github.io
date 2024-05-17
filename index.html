@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BENİM WEB SİTEM</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Functions Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section>
+        <h2>Merheba arkadaşlar bu sited size web proje ödevinizdeki fonksiyonları paylaşacağım.Yardımcı olursam ne mutlu bana.</h2>
+        <p></p>
+      </section>
+      <section>
+        <h2>Hizmetlerimiz:</h2>
+          <li>JAVASCRİPT FONKSİYONLARIMIZ:</li>
+          
+  
+
+  <script src="functions.js"></script>
+          <li>JQUERY FONKSİYONLARIMIZ:</li>
+          
+        </ul>
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript örnekleri</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // JavaScript functions
+            function toggleClass() {
+                $("button.toggle").click(function () {
+                    $("p.highlight").toggleClass("highlight");
+                });
+            }
+
+            function fadeInOut() {
+                $("button.fade").click(function () {
+                    $("p.fade").fadeOut(1000, function () {
+                        $(this).fadeIn(1000);
+                    });
+                });
+            }
+
+            function slideUpDown() {
+                $("button.slide").click(function () {
+                    $("p.slide").slideUp(1000, function () {
+                        $(this).slideDown("slow");
+                    });
+                });
+            }
+
+            function showHide() {
+                $("button.showHide").click(function () {
+                    $("p.showHide").show();
+                    $("div.showHide").hide();
+                });
+            }
+
+            function toggleElement() {
+                $("button.toggleElement").click(function () {
+                    $("p.toggleElement").toggle();
+                });
+            }
+
+            function callbackExample() {
+                $("button#callback").click(function () {
+                    $("div#callbackDiv").fadeOut("slow", function () {
+                        alert("Fade out complete.");
+                    });
+                });
+            }
+
+            function eventHandling() {
+                $("button#eventButton").on("click", function () {
+                    alert("Button clicked!");
+                });
+            }
+
+            function ajaxGet() {
+                $.ajax({
+                    url: "demo_test.txt",
+                    success: function (result) {
+                        $("div#ajaxDiv").html(result);
+                    },
+                });
+            }
+
+            function formValidation() {
+                $("form#validationForm").submit(function (event) {
+                    if ($("input#validationInput").val() === "") {
+                        alert("Input field is empty!");
+                        event.preventDefault();
+                    }
+                });
+            }
+
+            // Initialize functions
+            toggleClass();
+            fadeInOut();
+            slideUpDown();
+            
+            showHide();
+            toggleElement();
+            callbackExample();
+            eventHandling();
+            ajaxGet();
+            formValidation();
+        });
+    </script>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <button class="toggle">Toggle Class</button>
+    <p class="highlight">Bu vurgulanan bir paragraftır.</p>
+
+    <button class="fade">Fade In/Out</button>
+    <p class="fade">Bu paragraf basılkdığında kaybolacaktır.</p>
+
+    <button class="slide">Slide Up/Down</button>
+    <p class="slide">Bu paragraf yukarı ve aşağı kayacaktır.</p>
+    <button class="showHide">Show/Hide</button>
+    <p class="showHide">Bu paragraf gösterilecek ve gizlenecektir.</p>
+    <div class="showHide">Bu div gösterilecek ve gizlenecek.</div>
+
+    <button class="toggleElement">Toggle Element</button>
+    <p class="toggleElement">Bu paragraf değiştirilecek.</p>
+
+    <button id="callback">Callback Example</button>
+    <div id="callbackDiv">Bu div bir geri aramayla kaybolacak.</div>
+
+    <button id="eventButton">Event Handling</button>
+
+    <div id="ajaxDiv">Bu div gösterilecek ve gizlenecek.</div>
+
+    <form id="validationForm">
+        <label for="validationInput">Enter something:</label>
+        <input type="text" id="validationInput" name="validationInput">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions Demo</title>
+    <style>
+        /* Add your CSS styles here */
+        button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        div {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birleşik JavaScript Örnekleri</title>
+</head>
+<body>
+  <h1>Birleşik JavaScript Örnekleri</h1>
+
+  <button id="alertButton">Uyarı Göster</button>
+  <button id="updateButton">İçeriği Güncelle</button>
+  <button id="validateButton">Formu Doğrula</button>
+  <button id="listenerButton">Olay Dinleyicisi Ekle</button>
+  <button id="startButton">Sayacı Başlat</button>
+  <button id="fetchButton">Verileri Al</button>
+
+  <form id="myForm">
+    <label for="username">Kullanıcı Adı:</label>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Şifre:</label>
+    <input type="password" id="password" name="password"><br>
+    <button type="submit">Gönder</button>
+  </form>
+
+  <div id="myElement">Eski İçerik</div>
+  <div id="timer">Kalan Süre: 0 dakika</div>
+  <div id="apiData"></div>
+
+  <script>
+    // Bir uyarı mesajı göster
+    document.getElementById("alertButton").addEventListener("click", function() {
+      alert("Merhaba, Dünya!");
+    });
+
+    // HTML öğesinin içeriğini değiştir
+    document.getElementById("updateButton").addEventListener("click", function() {
+      document.getElementById("myElement").innerHTML = "Yeni içerik";
+    });
+
+    // Form girdilerini doğrula
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Form gönderimini engelle
+
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "" || password === "") {
+        alert("Lütfen kullanıcı adı ve şifreyi girin.");
+      } else {
+        alert("Form gönderildi!");
+      }
+    });
+
+    // Öğelere olay dinleyicileri ekle
+    document.getElementById("listenerButton").addEventListener("click", function() {
+      console.log("Düğme tıklandı!");
+    });
+
+    document.getElementById("myForm").addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        console.log("Enter tuşuna basıldı!");
+      }
+    });
+
+    // Basit bir geri sayım sayacı oluştur
+    var minutes = 5;
+    document.getElementById("startButton").addEventListener("click", function() {
+      clearInterval(countdown); // Mevcut aralığı temizle
+
+      var countdown = setInterval(function() {
+        minutes--;
+        document.getElementById("timer").innerHTML = "Kalan Süre: " + minutes + " dakika";
+
+        if (minutes === 0) {
+          clearInterval(countdown);
+          document.getElementById("timer").innerHTML = "Zaman doldu!";
+        }
+      }, 1000); // 1000 milisaniye = 1 saniye
+    });
+
+    // API'den veri al (örnek verilerle)
+    document.getElementById("fetchButton").addEventListener("click", function() {
+      // Örnek JSON verileri
+      var exampleData = {
+        name: "Örnek Veri",
+        value: 123,
+        items: ["Öğe 1", "Öğe 2", "Öğe 3"]
+      };
+
+      document.getElementById("apiData").innerHTML = JSON.stringify(exampleData, null, 2);
+    });
+  </script>
+</body>
+</html> 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creative jQuery Examples</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>jQuery Örnekleri</h1>
+
+  <button id="randomColorButton">Rastgele Renk Değiştir</button>
+  <button id="rotateButton">Öğeyi Döndür</button>
+  <button id="toggleImageButton">Resim Kaynağını Değiştir</button>
+  <button id="infiniteScrollButton">Sonsuz Kaydırma</button>
+  <button id="typewriterButton">Yazıcı Efekti</button>
+  <button id="parallaxButton">Parallax Efekti</button>
+  <button id="stickyNavButton">Yapışkan Navigasyon</button>
+  <button id="openModalButton">Modal Aç</button>
+  <button id="autoCompleteButton">Oto-Tamamla</button>
+  <button id="galleryButton">Galeri Işık Kutusu</button>
+
+  <div id="infiniteScrollContent">
+    <div>İçerik 1</div>
+    <div>İçerik 2</div>
+    <div id="loadMoreContent">Daha Fazla İçerik Yükle</div>
+    <div class="content hidden">
+      <p>Gizli İçerik 1</p>
+      <p>Gizli İçerik 2</p>
+    </div>
+  </div>
+
+  <div class="parallax"></div>
+
+  <nav id="stickyNav">
+    <ul>
+      <li><a href="#">Ana Sayfa</a></li>
+      <li><a href="#">Hakkımızda</a></li>
+      <li><a href="#">Hizmetlerimiz</a></li>
+      <a href="contact.html">iletişim</a>
+    </ul>
+  </nav>
+
+  <input type="text" id="autoCompleteInput" placeholder="Ülke ara...">
+
+  <div class="gallery">
+    <img class="gallery-image" src="img/ronaldo.jpg" alt="ronaldo">
+    <img class="gallery-image" src="img/messi.jpg" alt="messi">
+    <img class="gallery-image" src="img/arda.jpg" alt="arda">
+  </div>
+
+  <button id="closeModalButton">Modalı Kapat</button>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Modal Başlık</h2>
+      <p>Modal içeriği...</p>
+    </div>
+  </div>
+
+  <p id="colorTarget">Renk değiştirilecek paragraf</p>
+  <img id="rotateTarget" src="img/messi2.jpg" alt="messi2">
+  <p id="typewriterTarget"></p>
+
+  <script>
+    $(document).ready(function() {
+      // Rastgele Renk Değiştir
+      $("#randomColorButton").click(function() {
+        $("#colorTarget").animate({
+          backgroundColor: Math.random().toString().slice(2, 8),
+        }, 1000);
+      });
+
+      // Öğeyi Döndür
+      $("#rotateButton").click(function() {
+        $("#rotateTarget").css("transform", "rotate(360deg)");
+      });
+
+      // Resim Kaynağını Değiştir
+      var images = ["resim.1.jpeg", "image2.jpg", "image3.jpg"];
+      $("#toggleImageButton").click(function() {
+        var randomImage = images[Math.floor(Math.random() * images.length)];
+        $("#rotateTarget").attr("src", randomImage);
+      });
+
+      // Sonsuz Kaydırma
+      $(window).scroll(function() {
+        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+          $("#loadMoreContent").fadeIn();
+        }
+      });
+
+      $("#loadMoreContent").click(function() {
+        $(".hidden").removeClass("hidden");
+        $(this).fadeOut();
+      });
+
+      // Yazıcı Efekti
+      var text = "Metin yazdırılıyor.";
+      var i = 0;
+      var typingSpeed = 50;
+
+      function type() {
+        if (i < text.length) {
+          $("#typewriterTarget").text($("#typewriterTarget").text() + text.charAt(i));
+          i++;
+          setTimeout(type, typingSpeed);
+        }
+      }
+
+      $("#typewriterButton").click(function() {
+        type();
+      });
+
+      // Parallax Efekti
+      $(window).scroll(function() {
+        var scrollTop = $(window).scrollTop();
+        $(".parallax").css("transform", "translate(0, " + scrollTop * 0.5 + "px)");
+      });
+
+      // Yapışkan Navigasyon
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 100) {
+          $("#stickyNav").addClass("sticky");
+        } else {
+          $("#stickyNav").removeClass("sticky");
+        }
+      });
+
+      // Modal Aç
+      $("#openModalButton").click(function() {
+        $("#myModal").fadeIn();
+      });
+
+      // Modal Kapat
+      $("#closeModalButton").click(function() {
+        $("#myModal").fadeOut();
+      });
+
+      // Oto-Tamamla
+      var countries = ["Türkiye", "Almanya", "Fransa", "İngiltere", "İtalya"];
+      $("#autoCompleteInput").autocomplete({
+        source: countries
+      });
+
+      // Galeri Işık Kutusu
+      $(".gallery-image").click(function() {
+        $(".lightbox").fadeIn();
+        $(".lightbox-image").attr("src", $(this).attr("src"));
+      });
+
+      $(".lightbox").click(function() {
+        $(this).fadeOut();
+      });
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iframe örneği</title>
+</head>
+<body>
+  <h1>iframe örneği</h1>
+  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/mdPfWXuGUBs?si=LRztCHnsnmSFdjGC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+  <div>enes bayram youtube kanalı</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Sitem</title>
+</head>
+<body>
+  <header>
+    <h1>Web Sitem</hanti-spam>
+    <button id="contactButton">İletişim</button>
+  </header>
+  
+  <script>
+    document.getElementById("contactButton").addEventListener("click", function() {
+      window.open("contact.html", "_blank");
+    });
+  </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Span Etiketi Örnekleri</title>
+</head>
+<body>
+  <h1>Span Etiketi Örnekleri</h1>
+  
+  <h2>1. Temel Kullanım</h2>
+  <span>Bu bir span öğesidir.</span>
+  
+  <h2>2. Ögeleri Gruplama</h2>
+  <span>Bu <strong>kalın</strong> ve <em>vurgulu</em> metindir.</span>
+  
+  <h2>3. Stil Uygulama</h2>
+  <span style="color: blue; font-weight: bold;">Stilli Metin</span>
+  
+  <h2>4. ID ve Sınıf Ekleme</h2>
+  <span id="mySpan" class="highlight">Önemli Metin</span>
+  
+  <h2>5. Metin Sarmalama</h2>
+  <span>Bu metin <span>sarmalanmıştır</span> başka bir span öğesi içinde.</span>
+  
+  <h2>6. Mikroveri</h2>
+  <span itemprop="author" itemscope itemtype="http://schema.org/Person">John Doe</span>
+  
+  <h2>7. Olay İşleme</h2>
+  <span onclick="alert('Düğme tıklandı!')">Beni tıkla</span>
+  
+  <h2>8. İç içe Span Etiketleri</h2>
+  <span>Bu <span>span <span>iç içe</span> yerleştirilmiştir</span> başka bir span öğesi içinde.</span>
+  
+  <h2>9. Araç İpucu Ekleme</h2>
+  <span title="Bu bir araç ipucudur">Üzerime gelin</span>
+  
+  <h2>10. Özel İkon Oluşturma</h2>
+  <span class="custom-icon"></span>
+</body>
+</html>
+<div>SİTEMİZ BU KADARDI BAKTIĞINIZ İÇİN TEŞEKÜR EDERİM:</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Sitem</title>
+</head>
+<body>
+  <header>
+    <h1>Web Sitem</hanti-spam>
+    
+  </header>
+  
+  <script>
+    document.getElementById("contactButton").addEventListener("click", function() {
+      window.open("contact.html", "_blank");
+    });
+  </script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hesap Makinesi</title>
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="display" readonly>
+        <br>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToOperation('+')">+</button>
+        <br>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToOperation('-')">-</button>
+        <br>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToOperation('*')">*</button>
+        <br>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="appendToOperation('/')">/</button>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
+<div>TEŞEKÜRLER</div>
